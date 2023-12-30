@@ -51,31 +51,8 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: screen[index],
+        body: MainMenuPage(),
         extendBody: true,
-        bottomNavigationBar: Container(
-          color: Colors.white,
-          child: Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 15.0, vertical: 20.0),
-            child: GNav(
-              gap: 8,
-              backgroundColor: Colors.white,
-              color: Colors.blue,
-              activeColor: Colors.white,
-              tabBackgroundColor: Colors.blueAccent.shade200,
-              padding: EdgeInsets.all(16),
-              onTabChange: (value) => {
-                setState(() => index = value),
-              },
-              tabs: [
-                GButton(icon: Icons.home, text: 'home'),
-                GButton(icon: Icons.task, text: 'Task'),
-                GButton(icon: Icons.feedback, text: 'Feedback'),
-                GButton(icon: Icons.person_2, text: 'Profile'),
-              ],
-            ),
-          ),
-        ));
+        );
   }
 }

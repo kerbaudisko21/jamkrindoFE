@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jakrindo/login_page.dart';
 import 'package:jakrindo/update_profile_page.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -28,6 +29,17 @@ class _ProfilePageState extends State<ProfilePage> {
       email = currUserData.getString('email') ?? '';
       name = currUserData.getString('name') ?? '';
     });
+  }
+
+  void logout() async {
+    final pref = await SharedPreferences.getInstance();
+    pref.clear();
+
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => LoginPage(),
+        )); // <- n
   }
 
   @override
@@ -93,7 +105,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   icon: LineAwesomeIcons.alternate_sign_out,
                   textColor: Colors.red,
                   endIcon: false,
-                  onPress: () {},
+                  onPress: () => logout(),
                 )
               ],
             )),

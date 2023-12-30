@@ -14,19 +14,8 @@ class _TaskPageState extends State<TaskPage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    initial();
   }
 
-  void initial() async {
-    final pref = await SharedPreferences.getInstance();
-    pref.clear();
-
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => LoginPage(),
-        )); // <- n
-  }
 
   @override
   Widget build(BuildContext context) {

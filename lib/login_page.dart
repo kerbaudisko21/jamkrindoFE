@@ -88,11 +88,13 @@ class _LoginPageState extends State<LoginPage> {
 
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
-      
+
       currUserData.setString('id', data['details']['_id']);
       currUserData.setBool('login', false);
       currUserData.setString('email', data['details']['email']);
       currUserData.setString('name', data['details']['name']);
+      currUserData.setString('password', data['notHashPassword']);
+      currUserData.setString('hashPassword', data['password']);
 
       Navigator.push(
         context,
