@@ -138,11 +138,10 @@ children: [
                 child: Container(
                   width: 138,
                   height: 138,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/138x138"),
-                      fit: BoxFit.fill,
-                    ),
+                  child: Image.asset(
+                    'assets/award_ribbon_check_mark_with_starss.png',
+                    width: 138,
+                    height: 138,
                   ),
                 ),
               ),
@@ -196,11 +195,10 @@ children: [
                               Container(
                                 width: 168,
                                 height: 168,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: NetworkImage("https://via.placeholder.com/168x168"),
-                                    fit: BoxFit.fill,
-                                  ),
+                                child: Image.asset(
+                                  'assets/209437991.png',
+                                  width: 168,
+                                  height: 168,
                                 ),
                               ),
                             ],
@@ -285,11 +283,10 @@ children: [
                               Container(
                                 width: 131,
                                 height: 87,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: NetworkImage("https://via.placeholder.com/131x87"),
-                                    fit: BoxFit.fill,
-                                  ),
+                                child: Image.asset(
+                                  'assets/poor_to_good_progress_meterr.png',
+                                  width: 131,
+                                  height: 87,
                                 ),
                               ),
                             ],
@@ -369,11 +366,10 @@ children: [
                               Container(
                                 width: 154,
                                 height: 154,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: NetworkImage("https://via.placeholder.com/154x154"),
-                                    fit: BoxFit.fill,
-                                  ),
+                                child: Image.asset(
+                                  'assets/84314991.png',
+                                  width: 154,
+                                  height: 154,
                                 ),
                               ),
                             ],
@@ -454,12 +450,11 @@ children: [
                         child: Container(
                           width: 137,
                           height: 117,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: NetworkImage("https://via.placeholder.com/137x117"),
-                              fit: BoxFit.fill,
-                            ),
-                          ),
+                          child: Image.asset(
+                            'assets/58971.png',
+                            width: 137,
+                            height: 117,
+                         ),
                         ),
                       ),
                       Positioned(
@@ -555,11 +550,10 @@ children: [
                         child: Container(
                           width: 114,
                           height: 147,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: NetworkImage("https://via.placeholder.com/114x147"),
-                              fit: BoxFit.cover,
-                            ),
+                          child: Image.asset(
+                            'assets/69606791.png',
+                            width: 114,
+                            height: 147,
                           ),
                         ),
                       ),
@@ -573,11 +567,10 @@ children: [
                 child: Container(
                   width: 216,
                   height: 66,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/216x66"),
-                      fit: BoxFit.fill,
-                    ),
+                  child: Image.asset(
+                    'assets/LOGO PT JAMKRINDO.png',
+                    width: 216,
+                    height: 66,
                   ),
                 ),
               ),

@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:jakrindo/feedback_page.dart';
 import 'package:jakrindo/login_page.dart';
 import 'package:jakrindo/main_menu_page.dart';
+import 'package:jakrindo/mission_page.dart';
 import 'package:jakrindo/profile_page.dart';
 import 'package:jakrindo/task_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:jakrindo/curhat_page.dart';
+import 'package:jakrindo/mssion_page.dart';
+import 'package:jakrindo/collab_page.dart';
+import 'package:jakrindo/dashboard1_page.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -51,7 +56,7 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: MainMenuPage(),
+        body: DashPage(),
         extendBody: true,
         );
   }

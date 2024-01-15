@@ -1,4 +1,4 @@
-#Sat Dec 30 12:57:20 WIB 2023
-base.0=D\:\\jakrindo\\jamkrindoFE\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Thu Jan 04 15:14:41 ICT 2024
+base.0=D\:\\MIKE\\Jamkrindoo\\jamkrindoFE\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
