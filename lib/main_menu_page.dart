@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MainMenuPage extends StatefulWidget {
   const MainMenuPage({super.key});
@@ -7,11 +8,21 @@ class MainMenuPage extends StatefulWidget {
   State<MainMenuPage> createState() => _MainMenuPageState();
 }
 
+void logout(BuildContext context) async {
+  // Clear stored user data
+  SharedPreferences currUserData = await SharedPreferences.getInstance();
+  currUserData.clear();
+
+  // Navigate to the login screen
+  Navigator.pushReplacementNamed(
+      context, '/login'); // Replace with your login screen route
+}
+
 class _MainMenuPageState extends State<MainMenuPage> {
   @override
   Widget build(BuildContext context) {
     return ListView(
-children: [
+      children: [
         Container(
           width: 375,
           height: 1409,
@@ -105,8 +116,7 @@ children: [
                               borderRadius: BorderRadius.circular(20),
                             ),
                           ),
-                          child: Stack(children: [
-                          ]),
+                          child: Stack(children: []),
                         ),
                       ),
                       Positioned(
@@ -135,13 +145,20 @@ children: [
               Positioned(
                 left: 30,
                 top: 1218,
-                child: Container(
-                  width: 138,
-                  height: 138,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/138x138"),
-                      fit: BoxFit.fill,
+                child: GestureDetector(
+                  onTap: () {
+                    // Handle logout when the image is tapped
+                    logout(context); // Replace with your logout function
+                  },
+                  child: Container(
+                    width: 138,
+                    height: 138,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image:
+                            NetworkImage("https://via.placeholder.com/138x138"),
+                        fit: BoxFit.fill,
+                      ),
                     ),
                   ),
                 ),
@@ -198,7 +215,8 @@ children: [
                                 height: 168,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: NetworkImage("https://via.placeholder.com/168x168"),
+                                    image: NetworkImage(
+                                        "https://via.placeholder.com/168x168"),
                                     fit: BoxFit.fill,
                                   ),
                                 ),
@@ -287,7 +305,8 @@ children: [
                                 height: 87,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: NetworkImage("https://via.placeholder.com/131x87"),
+                                    image: NetworkImage(
+                                        "https://via.placeholder.com/131x87"),
                                     fit: BoxFit.fill,
                                   ),
                                 ),
@@ -350,7 +369,8 @@ children: [
                         child: Container(
                           width: 330,
                           height: 156.68,
-                          padding: const EdgeInsets.only(right: 176, bottom: 2.68),
+                          padding:
+                              const EdgeInsets.only(right: 176, bottom: 2.68),
                           decoration: ShapeDecoration(
                             gradient: LinearGradient(
                               begin: Alignment(-1.00, -0.03),
@@ -371,7 +391,8 @@ children: [
                                 height: 154,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: NetworkImage("https://via.placeholder.com/154x154"),
+                                    image: NetworkImage(
+                                        "https://via.placeholder.com/154x154"),
                                     fit: BoxFit.fill,
                                   ),
                                 ),
@@ -444,8 +465,7 @@ children: [
                               borderRadius: BorderRadius.circular(20),
                             ),
                           ),
-                          child: Stack(children: [
-                          ]),
+                          child: Stack(children: []),
                         ),
                       ),
                       Positioned(
@@ -456,7 +476,8 @@ children: [
                           height: 117,
                           decoration: BoxDecoration(
                             image: DecorationImage(
-                              image: NetworkImage("https://via.placeholder.com/137x117"),
+                              image: NetworkImage(
+                                  "https://via.placeholder.com/137x117"),
                               fit: BoxFit.fill,
                             ),
                           ),
@@ -526,8 +547,7 @@ children: [
                               borderRadius: BorderRadius.circular(20),
                             ),
                           ),
-                          child: Stack(children: [
-                          ]),
+                          child: Stack(children: []),
                         ),
                       ),
                       Positioned(
@@ -557,7 +577,8 @@ children: [
                           height: 147,
                           decoration: BoxDecoration(
                             image: DecorationImage(
-                              image: NetworkImage("https://via.placeholder.com/114x147"),
+                              image: NetworkImage(
+                                  "https://via.placeholder.com/114x147"),
                               fit: BoxFit.cover,
                             ),
                           ),
