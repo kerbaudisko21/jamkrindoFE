@@ -75,35 +75,46 @@ class _LoginPageState extends State<LoginPage> {
     final String email = emailController.text;
     final String password = passwordController.text;
 
-    final response = await http.post(
-      Uri.parse(SETTING.url + "/auth/login"),
-      headers: {'Content-Type': 'application/json'},
-      body: jsonEncode(
-        <String, String>{
-          'email': email,
-          'password': password,
+    try {
+      final response = await http.post(
+        Uri.parse(SETTING.url + "/auth/login"),
+        headers: {
+          "accept": "*/*",
+          'Content-Type': 'application/json',
+          'accept-encoding': 'gzip, deflate, br', // Corrected placement
         },
-      ),
-    );
-
-    if (response.statusCode == 200) {
-      final data = jsonDecode(response.body);
-
-      currUserData.setString('id', data['details']['_id']);
-      currUserData.setBool('login', false);
-      currUserData.setString('email', data['details']['email']);
-      currUserData.setString('name', data['details']['name']);
-      currUserData.setString('password', data['notHashPassword']);
-      currUserData.setString('hashPassword', data['password']);
-
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => DashboardPage(),
+        body: jsonEncode(
+          <String, String>{
+            'email': email,
+            'password': password,
+          },
         ),
       );
-    } else {
-      showFlashError(context, 'Wrong email address or password.');
+      print([response.body, email, password]);
+      if (response.statusCode >= 200 && response.statusCode < 300) {
+        final data = jsonDecode(response.body);
+
+        currUserData.setString('id', data['details']['_id']);
+        currUserData.setBool('login', false);
+        currUserData.setString('email', data['details']['email']);
+        currUserData.setString('name', data['details']['name']);
+        currUserData.setString('password', data['notHashPassword']);
+        currUserData.setString('hashPassword', data['password']);
+
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => DashboardPage(),
+          ),
+        );
+      } else {
+        // Handle non-successful response
+        showFlashError(context, 'Wrong email address or password.');
+      }
+    } catch (error) {
+      // Handle exceptions (e.g., network issues)
+      print('Error during login: $error');
+      showFlashError(context, 'An error occurred during login.');
     }
   }
 
